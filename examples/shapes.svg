@@ -1,0 +1,12 @@
+<?xml version="1.0" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg">
+<g>
+<circle cx="55" cy="75" r="50" fill ="bisque"></circle>
+<text x="15" y="75" r="50" font-size="20px" fill="blueviolet">Hello</text>
+</g>
+
+<polygon points="150, 18 244, 182 56, 182" fill="blue" />
+
+<!-- <rect x="10" y="10" width="30" height="30" fill="crimson"/> -->
+</svg>
+</xml>
