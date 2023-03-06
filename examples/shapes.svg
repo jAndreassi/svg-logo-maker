@@ -1,12 +1,17 @@
 <?xml version="1.0" standalone="no"?>
-<svg xmlns="http://www.w3.org/2000/svg">
-<g>
-<circle cx="55" cy="75" r="50" fill ="bisque"></circle>
-<text x="15" y="75" r="50" font-size="20px" fill="blueviolet">Hello</text>
-</g>
-
-<polygon points="150, 18 244, 182 56, 182" fill="blue" />
-
-<!-- <rect x="10" y="10" width="30" height="30" fill="crimson"/> -->
-</svg>
+  <svg xmlns="http://www.w3.org/2000/svg" height="100vh" width="100vw">
+    <!-- <g>
+    
+      <circle cx="200" cy="200" r="150" fill ="bisque"></circle>
+      <text x="130" y="210" r="50" font-size="50px" fill="blueviolet">Hello</text>
+    </g> -->
+    <g>
+      <polygon points="150, 18 244, 182 56, 182" fill="blue" />
+      <text x="108" y="130" font-size="40px" fill="red">text</text>
+    </g>
+    <!-- <g>
+      <rect x="10" y="10" width="300" height="300" fill="crimson"/>
+      <text x="95" y="160" font-size="50px" fill="white">text</text>
+    </g> -->
+  </svg>
 </xml>
