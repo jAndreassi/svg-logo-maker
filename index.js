@@ -1,6 +1,9 @@
 const fs = require("fs");
 const inquirer = require("inquirer");
 const Shapes = require("./lib/shapes.js");
+const square = require("./lib/square.js");
+const triangle = require("./lib/triangle.js");
+const circle = require("./lib/circle.js");
 
 inquirer
   .prompt([
@@ -18,26 +21,50 @@ inquirer
     {
       type: "input",
       message: "What color do you want the shape to be?",
-      name: "shapecolor",
+      name: "shapeColor",
     },
     {
       type: "input",
       message: "What color do you want your text to be?",
-      name: "textcolor",
+      name: "textColor",
     },
   ])
-  .then((answers) =>
+  .then((answers) => {
+    let myShape;
+    switch (answers.shape) {
+      case "square":
+        myShape = new square(
+          answers.text,
+          answers.textColor,
+          answers.shapeColor
+        );
+        break;
+      case "triangle":
+        myShape = new triangle(
+          answers.text,
+          answers.textColor,
+          answers.shapeColor
+        );
+        break;
+      case "circle":
+        myShape = new circle(
+          answers.text,
+          answers.textColor,
+          answers.shapeColor
+        );
+        break;
+    }
     fs.writeFile(
       "./examples/logo.svg",
       `<?xml version="1.0" standalone="no"?>
-<svg xmlns="http://www.w3.org/2000/svg">
+<svg xmlns="http://www.w3.org/2000/svg" height="100vh" width="100vw">
 <g>
-<circle cx="55" cy="75" r="50" fill ="${answers.shapecolor}"></circle>
-<text x="15" y="75" r="50" font-size="20px" fill="${answers.textcolor}">${answers.text}</text>
+${myShape.shapeOption}
+${myShape.textOption}
 </g>
 
 </svg>
 </xml>`,
       (err) => (err ? console.log(err) : console.log("Here is your logo"))
-    )
-  );
+    );
+  });
