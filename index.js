@@ -4,13 +4,16 @@ const Shapes = require("./lib/shapes.js");
 const square = require("./lib/square.js");
 const triangle = require("./lib/triangle.js");
 const circle = require("./lib/circle.js");
+const MaxLengthInputPrompt = require("inquirer-maxlength-input-prompt");
+inquirer.registerPrompt("maxlength-input", MaxLengthInputPrompt);
 
 inquirer
   .prompt([
     {
-      type: "input",
+      type: "maxlength-input",
       message: "What 3 characters do you want on your logo?",
       name: "text",
+      maxLength: 3,
     },
     {
       type: "list",
@@ -65,6 +68,6 @@ ${myShape.textOption}
 
 </svg>
 </xml>`,
-      (err) => (err ? console.log(err) : console.log("Here is your logo"))
+      (err) => (err ? console.log(err) : console.log("Generated logo.svg"))
     );
   });
