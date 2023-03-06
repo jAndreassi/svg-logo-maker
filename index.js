@@ -66,8 +66,7 @@ ${myShape.shapeOption}
 ${myShape.textOption}
 </g>
 
-</svg>
-</xml>`,
+</svg>`,
       (err) => (err ? console.log(err) : console.log("Generated logo.svg"))
     );
   });
